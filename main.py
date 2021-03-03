@@ -1,6 +1,6 @@
 import display
 import pygame
-from algs import algorithmsDict, runAlgorithm
+from algs import algorithmsDict, run_algorithm
 from random import randint
 
 # Global Variables: numBars, delay, toDraw, button
@@ -34,7 +34,7 @@ def main():
                 # Generates a random list
                 numbers = [randint(10, 400) for i in range(display.numBars)]
                 # Executes the chosen algorithm
-                runAlgorithm(algorithm.lower(), numbers)
+                run_algorithm(algorithm.lower(), numbers)
                 display.toDraw = True
         display.drawInterface(numbers, -1, -1, -1, -1, greenRows = a_list)
 

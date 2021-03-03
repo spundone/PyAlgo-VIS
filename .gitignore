@@ -1,3 +1,7 @@
+__pycache__/
+.idea/
+.vscode
+tempCodeRunnerFile.py
+tempCodeRunnerFile.python
 *.pyc
 *.gif
-tempCodeRunnerFile.py

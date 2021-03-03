@@ -9,12 +9,12 @@ pygame.init()
 # Display settings
 windowSize = (900, 500)
 screen = pygame.display.set_mode(windowSize)
-pygame.display.set_caption('Python Sorting Algorithm Visualizer')
+pygame.display.set_caption('Sorting Algorithms Visualizer')
 
 # Font
-baseFont = pygame.font.SysFont('Open Sans', 25)
+baseFont = pygame.font.SysFont('Seoge-UI', 20)
 # Used Colors
-navy = (46, 58, 89)
+grey = (100, 100, 100)
 green = (125, 240, 125)
 white = (250, 250, 250)
 red = (255, 50, 50)
@@ -32,7 +32,7 @@ class InputBox:
 
     def draw(self):
         label = baseFont.render(self.name, True, self.color)
-        screen.blit(label, (self.rect.x + (self.rect.w - label.get_width()) / 2, self.rect.y - 25))
+        screen.blit(label, (self.rect.x + (self.rect.w - label.get_width()) / 2, self.rect.y - 32))
         pygame.draw.rect(screen, self.color, self.rect, 3)
 
     def update(self):
@@ -68,7 +68,7 @@ class TextBox(InputBox):
 class SliderBox(InputBox):
     def __init__(self, name, color, rect):
         super().__init__(name, color, rect)
-        self.value = self.rect.x+7
+        self.value = self.rect.x+6
 
     def draw(self):
         super().draw()
@@ -115,7 +115,7 @@ class DropdownBox():
     def __init__(self, name, rect, font):
         self.isActive = False
         self.name = name
-        self.color = navy
+        self.color = grey
         self.options_color = white
         self.rect = pygame.Rect(rect)
         self.active_option = -1
@@ -132,9 +132,9 @@ class DropdownBox():
 
     def draw(self):
         label = baseFont.render(self.name, True, self.color)
-        screen.blit(label, (self.rect.x + (self.rect.w - label.get_width()) / 2, self.rect.y - 25))
+        screen.blit(label, (self.rect.x + (self.rect.w - label.get_width()) / 2, self.rect.y - 32))
         pygame.draw.rect(screen, self.color, self.rect, 3)
-        option_text = self.font.render(self.options[self.DEFAUTL_OPTION], 1, navy)
+        option_text = self.font.render(self.options[self.DEFAUTL_OPTION], 1, grey)
         screen.blit(option_text, option_text.get_rect(center=self.rect.center))
 
         if self.isActive:
@@ -151,7 +151,7 @@ class DropdownBox():
                 index += 1
                 rect.x = self.rect.x + column * self.rect.width
                 
-                options_color = black if i - 1 == self.active_option else navy
+                options_color = black if i - 1 == self.active_option else grey
                 pygame.draw.rect(screen, self.options_color, rect, 0)
                 pygame.draw.rect(screen, self.color, rect, 3) # draw border
                 option_text = self.font.render(self.options[i][:12], 1, options_color)
@@ -188,10 +188,10 @@ class DropdownBox():
 
 
 # Input Boxes
-sizeBox = TextBox("Size", navy, (30, 440, 50, 50))
-delayBox = SliderBox("Speed", navy, (105, 440, 120, 50))
+sizeBox = TextBox("Size", grey, (30, 440, 50, 50))
+delayBox = SliderBox("Delay", grey, (105, 440, 112, 50))
 algorithmBox = DropdownBox("Algorithm", (242, 440, 140, 50), baseFont)
-startButton = ButtonBox('images/playButton.png', 'images/stopButton.png', (390, 440, 50, 50))
+startButton = ButtonBox('images/playButton.png', 'images/stopButton.png', (390, 435, 50, 50))
 
 # Global Variables
 numBars = 0
@@ -211,7 +211,7 @@ def drawBars(array, redBar1, redBar2, blueBar1, blueBar2, **kwargs):
         elif "greenRows" in kwargs and (num in (kwargs['greenRows'])):      
             color = green        
         else:
-            color = navy
+            color = grey
         bar_width = 900/numBars
         pygame.draw.rect(screen, color, [num * bar_width, 400 - array[num], ceil(bar_width), array[num]])
 
