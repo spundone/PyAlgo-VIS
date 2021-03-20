@@ -14,5 +14,5 @@ algorithmsDict = {
 }
 
 
-def runAlgorithm(algorithm, array):
+def run_alogorithm(algorithm, array):
     return algorithmsDict[algorithm](array, 0, len(array)-1)
