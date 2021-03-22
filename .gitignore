@@ -1,3 +1,4 @@
 *.pyc
 *.gif
 tempCodeRunnerFile.py
+.vscode/settings.json
