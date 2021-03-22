@@ -7,12 +7,12 @@ from time import time
 pygame.init()
 
 # Display settings
-windowSize = (900, 500)
+windowSize = (1500, 600)
 screen = pygame.display.set_mode(windowSize)
 pygame.display.set_caption('Python Sorting Algorithm Visualizer')
 
 # Font
-baseFont = pygame.font.SysFont('Open Sans', 25)
+baseFont = pygame.font.SysFont('arialblack', 12)
 # Used Colors
 navy = (46, 58, 89)
 green = (125, 240, 125)
@@ -32,7 +32,7 @@ class InputBox:
 
     def draw(self):
         label = baseFont.render(self.name, True, self.color)
-        screen.blit(label, (self.rect.x + (self.rect.w - label.get_width()) / 2, self.rect.y - 25))
+        screen.blit(label, (self.rect.x + (self.rect.w - label.get_width()) / 2, self.rect.y - 20))
         pygame.draw.rect(screen, self.color, self.rect, 3)
 
     def update(self):
@@ -53,7 +53,7 @@ class TextBox(InputBox):
         super().draw()
         surface = baseFont.render(self.text, True, self.color)
         screen.blit(surface, (self.rect.x + 10, self.rect.y + 10))
-        self.rect.w = max(surface.get_width() + 20, 50)
+        self.rect.w = max(surface.get_width() + 20, 40)
 
     def update(self, wEvent):
         super().update()
@@ -118,12 +118,12 @@ class DropdownBox():
         self.color = navy
         self.options_color = white
         self.rect = pygame.Rect(rect)
-        self.active_option = -1
+        self.active_option = 1
         self.font = font
 
     def add_options(self, options):
         self.options = options
-        dropdown_width = ceil((len(self.options)-1) * self.rect.height / self.rect.y) * self.rect.width
+        dropdown_width = ceil((len(self.options)+1) * self.rect.height / self.rect.y) * self.rect.width
         self.dropdown_rect = pygame.Rect((self.rect.x, 0, dropdown_width, self.rect.y))
 
 
@@ -132,7 +132,7 @@ class DropdownBox():
 
     def draw(self):
         label = baseFont.render(self.name, True, self.color)
-        screen.blit(label, (self.rect.x + (self.rect.w - label.get_width()) / 2, self.rect.y - 25))
+        screen.blit(label, (self.rect.x + (self.rect.w - label.get_width()) / 2, self.rect.y - 20))
         pygame.draw.rect(screen, self.color, self.rect, 3)
         option_text = self.font.render(self.options[self.DEFAUTL_OPTION], 1, navy)
         screen.blit(option_text, option_text.get_rect(center=self.rect.center))
@@ -188,10 +188,10 @@ class DropdownBox():
 
 
 # Input Boxes
-sizeBox = TextBox("Size", navy, (30, 440, 50, 50))
-delayBox = SliderBox("Speed", navy, (105, 440, 120, 50))
-algorithmBox = DropdownBox("Algorithm", (242, 440, 140, 50), baseFont)
-startButton = ButtonBox('images/playButton.png', 'images/stopButton.png', (390, 440, 50, 50))
+sizeBox = TextBox("SIZE", navy, (20, 30, 50, 30)) #sizeBox = TextBox("Size", navy, (30, 440, 50, 50))
+delayBox = SliderBox("SPEED", navy, (65, 30, 100, 30)) #delayBox = SliderBox("Speed", navy, (105, 440, 120, 50))
+algorithmBox = DropdownBox("ALGORITHM", (170, 30, 120, 30), baseFont) #algorithmBox = DropdownBox("Algorithm", (242, 440, 140, 50), baseFont)
+startButton = ButtonBox('images/playButton.png', 'images/stopButton.png', (300, 30, 30, 30)) #startButton = ButtonBox('images/playButton.png', 'images/stopButton.png', (390, 440, 50, 50))
 
 # Global Variables
 numBars = 0
@@ -212,12 +212,12 @@ def drawBars(array, redBar1, redBar2, blueBar1, blueBar2, **kwargs):
             color = green        
         else:
             color = navy
-        bar_width = 900/numBars
-        pygame.draw.rect(screen, color, [num * bar_width, 400 - array[num], ceil(bar_width), array[num]])
+        bar_width = 1500/numBars
+        pygame.draw.rect(screen, color, [num * bar_width, 600 - array[num], ceil(bar_width), array[num]])
 
 
-def drawBottomMenu():
-    """Draw the menu below the bars"""
+def drawTopMenu():
+    """Draw the menu above the bars"""
     sizeBox.draw()
     delayBox.draw()
     algorithmBox.draw()
@@ -247,7 +247,7 @@ def drawInterface(array, redBar1, redBar2, blueBar1, blueBar2, **kwargs):
     elif not paused and (time()-timer)<0.5:
         x,y = (850/2),150
         draw_polygon_alpha(screen, (150, 255, 150, 127), ((x+10,y+10),(x+10,y+50+10),(x+50,y+25+10))) 
-    drawBottomMenu()
+    drawTopMenu()
     pygame.display.update()
 
 
