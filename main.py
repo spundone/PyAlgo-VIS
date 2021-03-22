@@ -11,7 +11,7 @@ def main():
     numbers = []
     running = True
     # Add default values
-    display.sizeBox.text = '90'
+    display.sizeBox.text = '256'
     display.algorithmBox.add_options(list(algorithmsDict.keys()))
     # display.algorithmBox.text = 'mergesort'
     while running:
@@ -32,7 +32,7 @@ def main():
                     display.delayBox.value - display.delayBox.rect.x - 6
                 algorithm = display.algorithmBox.get_active_option()
                 # Generates a random list
-                numbers = [randint(10, 400) for i in range(display.numBars)]
+                numbers = [randint(10, 500) for i in range(display.numBars)]
                 # Executes the chosen algorithm
                 run_alogorithm(algorithm.lower(), numbers)
                 display.toDraw = True
