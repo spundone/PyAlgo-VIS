@@ -7,7 +7,7 @@ from time import time
 pygame.init()
 
 # Display settings
-windowSize = (1500, 600)
+windowSize = (1200, 700)
 screen = pygame.display.set_mode(windowSize)
 pygame.display.set_caption('Python Sorting Algorithm Visualizer')
 
@@ -188,8 +188,8 @@ class DropdownBox():
 
 
 # Input Boxes
-sizeBox = TextBox("SIZE", navy, (1450, 20, 50, 30)) #sizeBox = TextBox("Size", navy, (30, 440, 50, 50))
-delayBox = SliderBox("SPEED", navy, (1270, 20, 150, 30)) #delayBox = SliderBox("Speed", navy, (105, 440, 120, 50))
+sizeBox = TextBox("SIZE", navy, (1150, 20, 50, 30)) #sizeBox = TextBox("Size", navy, (30, 440, 50, 50))
+delayBox = SliderBox("SPEED", navy, (970, 20, 150, 30)) #delayBox = SliderBox("Speed", navy, (105, 440, 120, 50))
 algorithmBox = DropdownBox("ALGORITHM", (25, 20, 150, 30), baseFont) #algorithmBox = DropdownBox("Algorithm", (242, 440, 140, 50), baseFont)
 startButton = ButtonBox('images/playButton.png', 'images/stopButton.png', (300, 20, 30, 30)) #startButton = ButtonBox('images/playButton.png', 'images/stopButton.png', (390, 440, 50, 50))
 
@@ -212,7 +212,7 @@ def drawBars(array, redBar1, redBar2, blueBar1, blueBar2, **kwargs):
             color = green        
         else:
             color = navy
-        bar_width = 1500/numBars
+        bar_width = 1200/numBars
         pygame.draw.rect(screen, color, [num * bar_width, 600 - array[num], ceil(bar_width), array[num]])
 
 
