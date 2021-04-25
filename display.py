@@ -213,7 +213,7 @@ def drawBars(array, redBar1, redBar2, blueBar1, blueBar2, **kwargs):
         else:
             color = navy
         bar_width = 1200/numBars
-        pygame.draw.rect(screen, color, [num * bar_width, 600 - array[num], ceil(bar_width), array[num]])
+        pygame.draw.rect(screen, color, [num * bar_width, 700 - array[num], ceil(bar_width), array[num]])
 
 
 def drawTopMenu():
@@ -243,8 +243,8 @@ def drawInterface(array, redBar1, redBar2, blueBar1, blueBar2, **kwargs):
     #draw
     drawBars(array, redBar1, redBar2, blueBar1, blueBar2, **kwargs)
     if paused and (time()-timer)<0.5:
-        draw_rect_alpha(screen,(255, 255, 0, 127),[(1500/2)+10, 250+10, 10, 50])
-        draw_rect_alpha(screen,(255, 255, 0, 127),[(1500/2)+40, 250+10, 10, 50])
+        draw_rect_alpha(screen,(255, 255, 0, 127),[(1200/2)+10, 250+10, 10, 50])
+        draw_rect_alpha(screen,(255, 255, 0, 127),[(1200/2)+40, 250+10, 10, 50])
     elif not paused and (time()-timer)<0.5:
         x,y = (1100/2),150
         draw_polygon_alpha(screen, (150, 255, 150, 127), ((x+10,y+10),(x+10,y+50+10),(x+50,y+25+10))) 
