@@ -7,7 +7,7 @@ from time import time
 pygame.init()
 
 # Display settings
-windowSize = (1500, 600)
+windowSize = (1200, 700)
 screen = pygame.display.set_mode(windowSize)
 pygame.display.set_caption('Python Sorting Algorithm Visualizer')
 
@@ -188,8 +188,8 @@ class DropdownBox():
 
 
 # Input Boxes
-sizeBox = TextBox("SIZE", navy, (1450, 20, 50, 30)) #sizeBox = TextBox("Size", navy, (30, 440, 50, 50))
-delayBox = SliderBox("SPEED", navy, (1270, 20, 150, 30)) #delayBox = SliderBox("Speed", navy, (105, 440, 120, 50))
+sizeBox = TextBox("SIZE", navy, (1150, 20, 50, 30)) #sizeBox = TextBox("Size", navy, (30, 440, 50, 50))
+delayBox = SliderBox("SPEED", navy, (970, 20, 150, 30)) #delayBox = SliderBox("Speed", navy, (105, 440, 120, 50))
 algorithmBox = DropdownBox("ALGORITHM", (25, 20, 150, 30), baseFont) #algorithmBox = DropdownBox("Algorithm", (242, 440, 140, 50), baseFont)
 startButton = ButtonBox('images/playButton.png', 'images/stopButton.png', (300, 20, 30, 30)) #startButton = ButtonBox('images/playButton.png', 'images/stopButton.png', (390, 440, 50, 50))
 
@@ -212,8 +212,8 @@ def drawBars(array, redBar1, redBar2, blueBar1, blueBar2, **kwargs):
             color = green        
         else:
             color = navy
-        bar_width = 1500/numBars
-        pygame.draw.rect(screen, color, [num * bar_width, 600 - array[num], ceil(bar_width), array[num]])
+        bar_width = 1200/numBars
+        pygame.draw.rect(screen, color, [num * bar_width, 700 - array[num], ceil(bar_width), array[num]])
 
 
 def drawTopMenu():
@@ -243,8 +243,8 @@ def drawInterface(array, redBar1, redBar2, blueBar1, blueBar2, **kwargs):
     #draw
     drawBars(array, redBar1, redBar2, blueBar1, blueBar2, **kwargs)
     if paused and (time()-timer)<0.5:
-        draw_rect_alpha(screen,(255, 255, 0, 127),[(1500/2)+10, 250+10, 10, 50])
-        draw_rect_alpha(screen,(255, 255, 0, 127),[(1500/2)+40, 250+10, 10, 50])
+        draw_rect_alpha(screen,(255, 255, 0, 127),[(1200/2)+10, 250+10, 10, 50])
+        draw_rect_alpha(screen,(255, 255, 0, 127),[(1200/2)+40, 250+10, 10, 50])
     elif not paused and (time()-timer)<0.5:
         x,y = (1100/2),150
         draw_polygon_alpha(screen, (150, 255, 150, 127), ((x+10,y+10),(x+10,y+50+10),(x+50,y+25+10))) 
