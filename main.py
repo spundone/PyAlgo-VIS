@@ -6,12 +6,14 @@ from random import randint
 # Global Variables: numBars, delay, toDraw, button
 # They were declared in display.py
 
+def userinput():
+    
 
 def main():
     numbers = []
     running = True
     # Add default values
-    display.sizeBox.text = '256'
+    display.sizeBox.text = '56'
     display.algorithmBox.add_options(list(algorithmsDict.keys()))
     # display.algorithmBox.text = 'mergesort'
     while running:
