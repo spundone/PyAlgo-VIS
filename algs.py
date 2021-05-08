@@ -1,5 +1,4 @@
 from algorithms import *
-from algorithms.binaryinsertionSort import binaryinsertionSort
 
 algorithmsDict = {
     'insertionsort': insertionSort,
@@ -7,10 +6,7 @@ algorithmsDict = {
     'selectionsort': selectionSort,
     'mergesort': mergeSort,
     'quicksort': quickSort,
-    'bogosort': bogoSort,
     'heapsort': heapSort,
-    'radixsort': radixSort,
-    'binaryinsertionsort': binaryinsertionSort,
 }
 
 
