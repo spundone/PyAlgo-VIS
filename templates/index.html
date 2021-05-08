@@ -14,9 +14,11 @@
   <div class="container">
     <nav>
 	<h3>Sorting Algorithm Visualizer</h3>
-    <h3>Set Size</h3>
+    <!-- <h4><a onclick=""Set Size</h4> <input type="range">
+    <h4><a onclick="set_speed();"Animation Speed</h4> -->
+
     <ul>
-      <li><a href="/">Create New Array</a></li>
+      <li><a href="/">Generate New Array</a></li>
       <li><a onclick="merge_sort()">Merge Sort</a></li>
       <li><a onclick="quick_sort()">Quick Sort</a></li>
       <li><a onclick="bubble_sort()">Bubble Sort</a></li>
@@ -26,6 +28,8 @@
   </nav>
   </div>
 </header>
+
+
 
 <!--Array-->
 <div class="array-container">
@@ -38,9 +42,9 @@
 </body>
 <script>
 
-const ANIMATION_SPEED_MS = 5;
-const PRIMARY_COLOR = '47474d';
-const SECONDARY_COLOR = 'yellow';
+const ANIMATION_SPEED_MS = 5;  //need to change this value to change the speed more is slower
+const PRIMARY_COLOR = '47474d';  // black
+const SECONDARY_COLOR = 'red';
 const ANIMATION_SPEED_MS_BUBBLE = 1;
 
 function merge_sort(){

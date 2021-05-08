@@ -4,7 +4,7 @@ import random
 
 def arrayValues():
     ary = []
-    for i in range(0, 250):
+    for i in range(0, 100):  #change this to change no of elements
         n = random.randint(100, 600)
         ary.append(n)
     return ary

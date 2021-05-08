@@ -15,7 +15,7 @@ body{
 
         
 .array-bars {
-    width: 10px;
+    width: 100px;  /* array bars width more is better as it will autoshrink*/
     margin: 1.5px;
     margin-top: 0px;
 }
@@ -72,4 +72,11 @@ h3 {
     float: left;
     font-weight: 950;
 }
-
+h4 {
+  font-family: 'Montserrat';
+  font-size: 20px;
+  margin: 15px 370px 0px 10px;
+  color: Black;
+  float: left;
+  font-weight: 550;
+}

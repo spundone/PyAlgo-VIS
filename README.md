@@ -4,3 +4,11 @@
 
 Django version of sorting visualiser forked from https://github.com/jntushar/Sorting-Visualizer
 
+
+To run this visualiser, you need to have django installed from pip. Then just give cmd python manage.py runserver
+
+sortingAlgorithms/views.py has most of the python backend functionality
+width of the bars can be set from styles.css
+speed can be changed within index.html
+
+TODO: add sliders for time and no of elemnts
