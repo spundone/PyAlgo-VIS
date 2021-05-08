@@ -6,7 +6,7 @@ from random import randint
 # Global Variables: numBars, delay, toDraw, button
 # They were declared in display.py
 
-def userinput():
+# def userinput():
     
 
 def main():
