@@ -45,6 +45,7 @@
 const ANIMATION_SPEED_MS = 5;  //need to change this value to change the speed more is slower
 const PRIMARY_COLOR = '47474d';  // black
 const SECONDARY_COLOR = 'red';
+const TERTIARY_COLOR = 'green';
 const ANIMATION_SPEED_MS_BUBBLE = 1;
 
 function merge_sort(){
@@ -62,7 +63,7 @@ function merge_sort(){
                         const [barOneIdx, barTwoIdx] = arr[i];
                         const barOneStyle = arrayBars[barOneIdx].style;
                         const barTwoStyle = arrayBars[barTwoIdx].style;
-                        const color = i % 3 === 0 ? SECONDARY_COLOR : PRIMARY_COLOR;
+                        const color = i % 3 === 0 ? SECONDARY_COLOR : TERTIARY_COLOR;
                         setTimeout(() => {
                             barOneStyle.backgroundColor = color;
                             barTwoStyle.backgroundColor = color;
@@ -92,7 +93,7 @@ function quick_sort() {
             const isColorChange = (i % 6 === 0) || (i % 6 === 1);
             const arrayBars = document.getElementsByClassName('array-bars');
             if(isColorChange === true) {
-                const color = (i % 6 === 0) ? SECONDARY_COLOR : PRIMARY_COLOR;
+                const color = (i % 6 === 0) ? SECONDARY_COLOR : TERTIARY_COLOR;
                 const [barOneIndex, barTwoIndex] = arr[i];
                 if(barOneIndex === -1) {
                     continue;
@@ -132,7 +133,7 @@ function bubble_sort() {
             const isColorChange = (i % 4 === 0) || (i % 4 === 1);
             const arrayBars = document.getElementsByClassName('array-bars');
                 if(isColorChange === true) {
-                    const color = (i % 4 === 0) ? SECONDARY_COLOR : PRIMARY_COLOR;
+                    const color = (i % 4 === 0) ? SECONDARY_COLOR : TERTIARY_COLOR;
                     const [barOneIndex, barTwoIndex] = arr[i];
                     const barOneStyle = arrayBars[barOneIndex].style;
                     const barTwoStyle = arrayBars[barTwoIndex].style;
@@ -169,7 +170,7 @@ function selection_sort() {
             const isColorChange = (arr[i][0] === 999) || (arr[i][0] === 9999);
             const arrayBars = document.getElementsByClassName('array-bars');
             if(isColorChange === true) {
-                const color = (arr[i][0] === 999) ? SECONDARY_COLOR : PRIMARY_COLOR;
+                const color = (arr[i][0] === 999) ? SECONDARY_COLOR : TERTIARY_COLOR;
                 const [temp, barOneIndex, barTwoIndex] = arr[i];
                 const barOneStyle = arrayBars[barOneIndex].style;
                 const barTwoStyle = arrayBars[barTwoIndex].style;
@@ -204,7 +205,7 @@ function insertion_sort() {
             const isColorChange = (arr[i][0] === 999) || (arr[i][0] === 9999);
             const arrayBars = document.getElementsByClassName('array-bars');
             if(isColorChange === true) {
-                const color = (arr[i][0] === 999) ? SECONDARY_COLOR : PRIMARY_COLOR;
+                const color = (arr[i][0] === 999) ? SECONDARY_COLOR : TERTIARY_COLOR;
                 const [temp, barOneIndex, barTwoIndex] = arr[i];
                 const barOneStyle = arrayBars[barOneIndex].style;
                 const barTwoStyle = arrayBars[barTwoIndex].style;
