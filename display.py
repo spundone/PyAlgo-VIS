@@ -123,7 +123,7 @@ class DropdownBox():
 
     def add_options(self, options):
         self.options = options
-        dropdown_width = ceil((len(self.options)+1) * self.rect.height / self.rect.y) * self.rect.width
+        dropdown_width = ceil((len(self.options)-1) * self.rect.height / self.rect.y) * self.rect.width
         self.dropdown_rect = pygame.Rect((self.rect.x, 0, dropdown_width, self.rect.y))
 
 
@@ -148,7 +148,7 @@ class DropdownBox():
                     column += 0
                     index = 0
                     rect.y = rect_start
-                index -= 1
+                index += 1
                 rect.x = self.rect.x + column * self.rect.width
                 
                 options_color = black if i - 1 == self.active_option else navy
@@ -188,10 +188,10 @@ class DropdownBox():
 
 
 # Input Boxes
-sizeBox = TextBox("SIZE", navy, (1150, 20, 50, 30)) #sizeBox = TextBox("Size", navy, (30, 440, 50, 50))
-delayBox = SliderBox("SPEED", navy, (970, 20, 150, 30)) #delayBox = SliderBox("Speed", navy, (105, 440, 120, 50))
-algorithmBox = DropdownBox("ALGORITHM", (25, 20, 150, 30), baseFont) #algorithmBox = DropdownBox("Algorithm", (242, 440, 140, 50), baseFont)
-startButton = ButtonBox('images/playButton.png', 'images/stopButton.png', (300, 20, 30, 30)) #startButton = ButtonBox('images/playButton.png', 'images/stopButton.png', (390, 440, 50, 50))
+sizeBox = TextBox("Size", navy, (30, 640, 50, 50))
+delayBox = SliderBox("Speed", navy, (105, 640, 120, 50))
+algorithmBox = DropdownBox("Algorithm", (242, 640, 140, 50), baseFont)
+startButton = ButtonBox('images/playButton.png', 'images/stopButton.png', (390, 640, 50, 50))
 
 # Global Variables
 numBars = 0
@@ -213,7 +213,7 @@ def drawBars(array, redBar1, redBar2, blueBar1, blueBar2, **kwargs):
         else:
             color = navy
         bar_width = 1200/numBars
-        pygame.draw.rect(screen, color, [num * bar_width, 700 - array[num], ceil(bar_width), array[num]])
+        pygame.draw.rect(screen, color, [num * bar_width, 600 - array[num], ceil(bar_width), array[num]])
 
 
 def drawTopMenu():
