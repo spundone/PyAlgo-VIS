@@ -31,7 +31,7 @@ def main():
                 # Set the values given by the user
                 display.numBars = int(display.sizeBox.text)
                 display.delay =\
-                    display.delayBox.value - display.delayBox.rect.x - 6
+                    display.delayBox.value - display.delayBox.rect.x 
                 algorithm = display.algorithmBox.get_active_option()
                 # Generates a random list
                 numbers = [randint(10, 500) for i in range(display.numBars)]

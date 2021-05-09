@@ -72,17 +72,17 @@ class SliderBox(InputBox):
 
     def draw(self):
         super().draw()
-        pygame.draw.line(screen, self.color, (self.rect.x+6, self.rect.y+25), (self.rect.x+self.rect.w-6, self.rect.y+25), 2)
-        pygame.draw.line(screen, self.color, (self.value, self.rect.y+5), (self.value, self.rect.y+45), 12)
+        pygame.draw.line(screen, self.color, (self.rect.x+16, self.rect.y+20), (self.rect.x+self.rect.w-16, self.rect.y+20), 2)
+        pygame.draw.line(screen, self.color, (self.value, self.rect.y+5), (self.value, self.rect.y+35), 12)
 
     def update(self):
         super().update()
         if self.isActive and pygame.mouse.get_pressed() != (0, 0, 0):
             x = pygame.mouse.get_pos()[0]
-            if x <= self.rect.x+6:
-                self.value = self.rect.x+6
-            elif x >= self.rect.w+self.rect.x-6:
-                self.value = self.rect.w+self.rect.x-6
+            if x <= self.rect.x+16:
+                self.value = self.rect.x+16
+            elif x >= self.rect.w+self.rect.x-16:
+                self.value = self.rect.w+self.rect.x-16
             else:
                 self.value = x
 
@@ -95,7 +95,7 @@ class ButtonBox:
         self.rect = pygame.Rect(rect)
 
     def draw(self):
-        self.rect.x = algorithmBox.rect.x+algorithmBox.rect.w+20
+        self.rect.x = algorithmBox.rect.x+algorithmBox.rect.w+10
         pos = (self.rect.x, self.rect.y)
         if self.active:
             screen.blit(self.stateTrue, pos)
@@ -188,10 +188,10 @@ class DropdownBox():
 
 
 # Input Boxes
-sizeBox = TextBox("Size", navy, (30, 640, 50, 50))
-delayBox = SliderBox("Speed", navy, (105, 640, 120, 50))
-algorithmBox = DropdownBox("Algorithm", (242, 640, 140, 50), baseFont)
-startButton = ButtonBox('images/playButton.png', 'images/stopButton.png', (390, 640, 50, 50))
+sizeBox = TextBox("Size", navy, (50, 640, 70, 40))
+delayBox = SliderBox("Speed", navy, (105, 640, 120, 40))
+algorithmBox = DropdownBox("Algorithm", (242, 640, 140, 40), baseFont)
+startButton = ButtonBox('images/playButton.png', 'images/stopButton.png', (370, 645, 50, 50))
 
 # Global Variables
 numBars = 0
@@ -275,5 +275,5 @@ def handleDrawing(array, redBar1, redBar2, blueBar1, blueBar2, **kwargs):
                         paused = False
                         timer = time()
         drawInterface(array, redBar1, redBar2, blueBar1, blueBar2, **kwargs)
-        delay = delayBox.value - delayBox.rect.x - 6
+        delay = delayBox.value - delayBox.rect.x - 16
         pygame.time.wait(delay)
