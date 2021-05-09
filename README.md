@@ -2,12 +2,8 @@
 A python application to visualize popular sorting algorithms. It's a simple desktop application to graphically visualize commonly studied sorting algorihtms. It can sort a randomly generated array and also show the steps while sorting. 
 #### Algorithms Implemented:
 * Bubble Sort 
-* Insertion Sort 
-* Selection Sort 
+* Quick Sort
 * Merge Sort 
-* Quick Sort 
-* Heap Sort 
-* Counting Sort
 ----------------------------------------------------------------------------------------------------------------------------------------
 ## Technologies used:
 The project is created with:
@@ -15,9 +11,7 @@ The project is created with:
 * Tkinter
 ----------------------------------------------------------------------------------------------------------------------------------------
 ## Run it:
-<p>Run <strong>main.py</strong><p>
+<p>Run <strong>1_BubbleSort/sortingAlgs.py</strong><p>
 
-```cmd
-python main.py
-```
+WIP half baked
 ----------------------------------------------------------------------------------------------------------------------------------------
