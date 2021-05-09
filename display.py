@@ -73,7 +73,7 @@ class SliderBox(InputBox):
     def draw(self):
         super().draw()
         pygame.draw.line(screen, self.color, (self.rect.x+6, self.rect.y+25), (self.rect.x+self.rect.w-6, self.rect.y+25), 2)
-        pygame.draw.line(screen, self.color, (self.value, self.rect.y+4), (self.value, self.rect.y+24), 12)
+        pygame.draw.line(screen, self.color, (self.value, self.rect.y+13), (self.value, self.rect.y+32), 12)
 
     def update(self):
         super().update()
