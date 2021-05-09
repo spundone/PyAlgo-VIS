@@ -20,7 +20,7 @@ iterate = 0
 elapse_rt = 0
 quick_time = 0
 smol_num = 10   #min number of elements in array
-large_num = 250 #max number of elements in array
+large_num = 100 #max number of elements in array
 coordinates_list = []
 active = False
 # global data
@@ -43,6 +43,7 @@ speed_name = StringVar()
 data = []
 algo_list = ['Bubble Sort', 'Insertion Sort', 'Selection Sort',
              'Merge Sort', 'Quick Sort', 'Heap Sort', 'Counting Sort']
+# E1 = Entry(window, text="Min Value",textvariable= smol_num).grid(row=1, column=2, padx=10, pady=5, sticky=W)
 s = Scale(window, label='Size of Array', variable=maxval,
           orient=HORIZONTAL, length=200, from_= smol_num, to= large_num, bg=WHITE)
 s.place(x=10, y=10)
@@ -66,7 +67,7 @@ s.place(x=610, y=10)
 def drawData(data, colorArray):
     canvas.delete("all")
     canvas_width = 800
-    canvas_height = 500
+    canvas_height = 520
     x_width = canvas_width / (len(data) + 1)
     offset = 4
     spacing = 2
@@ -78,6 +79,7 @@ def drawData(data, colorArray):
         x1 = (i + 1) * x_width + offset
         y1 = canvas_height
         canvas.create_rectangle(x0, y0, x1, y1, fill=colorArray[i])
+        canvas.create_text(x0+2, y0, anchor=SW, text=str(data[i]))
         # canvas.create_text()
         #canvas.create_text(text=data)
 
@@ -242,7 +244,6 @@ def start_stop():
         # time.sleep(1)
     else:
         active = False
-
         b1.config(text="Start Sorting")
         # b1.config(text="Resume")
         # sort()
@@ -297,6 +298,24 @@ algo_menu = ttk.Combobox(
     UI_frame, textvariable=algorithm_name, values=algo_list)
 algo_menu.grid(row=0, column=1, padx=5, pady=5)
 algo_menu.current(0)
+
+# l2 = Label(UI_frame, text="Min Value ", bg=WHITE)
+# l2.grid(row=1, column=0, padx=5, pady=5, sticky=W)
+# E1 = Entry(UI_frame, text="Min Value",textvariable= smol_num).grid(row=1, column=2, padx=10, pady=5, sticky=W)
+# E1.insert(ttk.END,'Min Value')
+
+# name_entry = ttk.Entry(UI_frame,textvariable = smol_num,)
+
+# smol_num = ttk.Entry()
+# smolnum_verify = IntVar()
+# smolnum = ttk.Entry(UI_frame, text="Min Value ", textvariable=smolnum_verify)
+# large_num = Label(UI_frame, text="Max Value", bg=WHITE)
+# large_num.grid(row=1, column=1, padx=5, pady=5, sticky=W)
+
+# l3 = Label(UI_frame, text="Max Value ", bg='grey')
+# l3.grid(row=1, column=3, padx=5, pady=5, sticky=W)
+# large_num = Entry(UI_frame)
+# large_num.grid(row=1, column=3, padx=5, pady=5, sticky=W)
 
 
 canvas = Canvas(window, width=800, height=500, bg=WHITE)
