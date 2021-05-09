@@ -154,7 +154,7 @@ class DropdownBox():
                 options_color = black if i - 1 == self.active_option else navy
                 pygame.draw.rect(screen, self.options_color, rect, 0)
                 pygame.draw.rect(screen, self.color, rect, 3) # draw border
-                option_text = self.font.render(self.options[i][:12], 1, options_color)
+                option_text = self.font.render(self.options[i][:15], 1, options_color)
                 screen.blit(option_text, option_text.get_rect(center=rect.center))
 
     def update(self):
