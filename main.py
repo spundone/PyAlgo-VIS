@@ -34,7 +34,7 @@ def main():
                     display.delayBox.value - display.delayBox.rect.x 
                 algorithm = display.algorithmBox.get_active_option()
                 # Generates a random list
-                numbers = [randint(10, 500) for i in range(display.numBars)]
+                numbers = [randint(10, 600) for i in range(display.numBars)]
                 # Executes the chosen algorithm
                 run_alogorithm(algorithm.lower(), numbers)
                 display.toDraw = True
