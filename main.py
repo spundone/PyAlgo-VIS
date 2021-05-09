@@ -270,7 +270,7 @@ def sort():
     #     heap_sort(data, drawData, timeTick)
     # else:
     #     counting_sort(data, drawData, timeTick)
-    if active == True:
+    if active == False:  #broken should be true
         if algo_menu.get() == 'Bubble Sort':
             bubble_sort(data, drawData, timeTick)
         elif algo_menu.get() == 'Selection Sort':
