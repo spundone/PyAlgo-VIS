@@ -1,1 +1,8 @@
 *.pyc
+__pycache__/colors.cpython-39.pyc
+algorithms/__pycache__/__init__.cpython-39.pyc
+algorithms/__pycache__/bubbleSort.cpython-39.pyc
+algorithms/__pycache__/heapSort.cpython-39.pyc
+algorithms/__pycache__/mergeSort.cpython-39.pyc
+algorithms/__pycache__/quickSort.cpython-39.pyc
+algorithms/__pycache__/insertionSort.cpython-39.pyc
