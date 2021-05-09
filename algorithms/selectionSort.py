@@ -12,5 +12,5 @@ def selection_sort(data, drawData, timeTick):
         drawData(data, [YELLOW if x == minimum or x == i else BLUE for x in range(len(data))] )
         time.sleep(timeTick)
         
-    drawData(data, [BLUE for x in range(len(data))])
+    drawData(data, [LIGHT_GREEN for x in range(len(data))])
     

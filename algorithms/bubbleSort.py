@@ -10,5 +10,5 @@ def bubble_sort(data, drawData, timeTick):
                 drawData(data, [YELLOW if x == j or x == j+1 else BLUE for x in range(len(data))] )
                 time.sleep(timeTick)
                 
-    drawData(data, [BLUE for x in range(len(data))])
+    drawData(data, [LIGHT_GREEN for x in range(len(data))])
   

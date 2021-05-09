@@ -20,5 +20,5 @@ def counting_sort(data, drawData, timeTick):
             time.sleep(timeTick)
             k += 1
 
-    drawData(data, [BLUE for x in range(len(data))])
+    drawData(data, [LIGHT_GREEN for x in range(len(data))])
 

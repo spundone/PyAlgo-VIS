@@ -36,4 +36,4 @@ def merge_sort(data, start, end, drawData, timeTick):
                         else DARK_BLUE if x > mid and x <=end else BLUE for x in range(len(data))])
         time.sleep(timeTick)
 
-    drawData(data, [BLUE for x in range(len(data))])
+    drawData(data, [LIGHT_GREEN for x in range(len(data))])

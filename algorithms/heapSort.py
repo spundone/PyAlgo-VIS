@@ -29,5 +29,5 @@ def heap_sort(data, drawData, timeTick):
         drawData(data, [YELLOW if x == i else BLUE for x in range(n)])
         time.sleep(timeTick)
     
-    drawData(data, [BLUE for x in range(len(data))])
+    drawData(data, [LIGHT_GREEN for x in range(len(data))])
     
