@@ -12,7 +12,7 @@ screen = pygame.display.set_mode(windowSize)
 pygame.display.set_caption('Python Sorting Algorithm Visualizer')
 
 # Font
-baseFont = pygame.font.Font('fonts/OpenSans-ExtraBold.ttf', 12)
+baseFont = pygame.font.Font('fonts/OpenSans-Bold.ttf', 12)
 # Used Colors
 navy = (46, 58, 89)
 green = (125, 240, 125)
@@ -68,12 +68,12 @@ class TextBox(InputBox):
 class SliderBox(InputBox):
     def __init__(self, name, color, rect):
         super().__init__(name, color, rect)
-        self.value = self.rect.x+7
+        self.value = self.rect.x+17
 
     def draw(self):
         super().draw()
         pygame.draw.line(screen, self.color, (self.rect.x+6, self.rect.y+25), (self.rect.x+self.rect.w-6, self.rect.y+25), 2)
-        pygame.draw.line(screen, self.color, (self.value, self.rect.y+13), (self.value, self.rect.y+32), 12)
+        pygame.draw.line(screen, self.color, (self.value, self.rect.y+5), (self.value, self.rect.y+45), 12)
 
     def update(self):
         super().update()
@@ -243,11 +243,11 @@ def drawInterface(array, redBar1, redBar2, blueBar1, blueBar2, **kwargs):
     #draw
     drawBars(array, redBar1, redBar2, blueBar1, blueBar2, **kwargs)
     if paused and (time()-timer)<0.5:
-        draw_rect_alpha(screen,(255, 255, 0, 127),[(1200/2)+10, 250+10, 10, 50])
-        draw_rect_alpha(screen,(255, 255, 0, 127),[(1200/2)+40, 250+10, 10, 50])
+        draw_rect_alpha(screen,(255, 255, 0, 227),[(1200/2)+10, 250+10, 10, 50])
+        draw_rect_alpha(screen,(255, 255, 0, 227),[(1200/2)+40, 250+10, 10, 50])
     elif not paused and (time()-timer)<0.5:
-        x,y = (1100/2),150
-        draw_polygon_alpha(screen, (150, 255, 150, 127), ((x+10,y+10),(x+10,y+50+10),(x+50,y+25+10))) 
+        x,y = (1200/2),250
+        draw_polygon_alpha(screen, (150, 255, 150, 227), ((x+10,y+10),(x+10,y+50+10),(x+50,y+25+10))) 
     drawTopMenu()
     pygame.display.update()
 
