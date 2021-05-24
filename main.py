@@ -19,8 +19,8 @@ compare = 0
 iterate = 0
 elapse_rt = 0
 quick_time = 0
-smol_num = 10   #min number of elements in array
-large_num = 100 #max number of elements in array
+smol_num = 10  # min number of elements in array
+large_num = 100  # max number of elements in array
 coordinates_list = []
 active = False
 # global data
@@ -29,7 +29,7 @@ active = False
 # Main window
 window = Tk()
 window.title("Sorting Algorithms Visualization")
-window.maxsize(900, 600)
+window.maxsize(900, 700)
 window.config(bg=WHITE)
 
 # labels
@@ -47,8 +47,6 @@ algo_list = ['Bubble Sort', 'Insertion Sort', 'Selection Sort',
 
 
 # Drawing the numerical array as bars
-
-
 def drawData(data, colorArray):
     canvas.delete("all")
     canvas_width = 800
@@ -66,7 +64,7 @@ def drawData(data, colorArray):
         canvas.create_rectangle(x0, y0, x1, y1, fill=colorArray[i])
         canvas.create_text(x0+2, y0, anchor=SW, text=str(data[i]))
         # canvas.create_text()
-        #canvas.create_text(text=data)
+        # canvas.create_text(text=data)
 
     window.update_idletasks()
 
@@ -74,63 +72,49 @@ def drawData(data, colorArray):
 # Randomly generate array
 def generate():
     global data
-
-  
     minVal = int(minEntry.get())
     maxVal = int(maxEntry.get())
-    size=int(sizeEntry.get())
+    size = int(sizeEntry.get())
 
     data = []
     for i in range(size):
         data.append(random.randrange(minVal, maxVal+1))
-        
 
     drawData(data, [DARK_GRAY for x in range(len(data))])
 
-# def manualEntry():
-
-    
-        
-
-    # define checkboxes
-    bubble_btn = Button( text="Bubble Sort", command=lambda: label(1))
-    insertion_btn = Button( text="Insertion Sort", command=lambda: label(2))
-    selection_btn = Button( text="Selection Sort", command=lambda: label(3))
-    quick_btn = Button( text="Quick Sort", command=lambda: label(4))
-    heap_btn = Button( text="Heap Sort", command=lambda: label(5))
-    shell_btn = Button( text="Shell Sort", command=lambda: label(6))
+# # def manualEntry():
 
 
+#     # define checkboxes
+#     bubble_btn = Button( text="Bubble Sort", command=lambda: label(1))
+#     insertion_btn = Button( text="Insertion Sort", command=lambda: label(2))
+#     selection_btn = Button( text="Selection Sort", command=lambda: label(3))
+#     quick_btn = Button( text="Quick Sort", command=lambda: label(4))
+#     heap_btn = Button( text="Heap Sort", command=lambda: label(5))
+#     shell_btn = Button( text="Shell Sort", command=lambda: label(6))
 
 
-
-
-    # code runs on when run button is pressed ...
-    # for each algorithm in the queue, the corresponding stats
-    # are projected under their respective labels
-    def run():
-        global coordinates_list
-        # create_visual()
-        s.set(launch_s.get())
-        index_val = []
-        for element in list(q.queue):
-            for bll in range(len(buttons_test_list)):
-                if str(element) == buttons_test_list[bll]:
-                    index_val.append(bll)
-        print(index_val)
-        new_cl = coordinates_list
-        for value in range(len(index_val)):
-            coordinates_list = new_cl
-            components[value].invoke()
-            comparison_list[value] = compare
-            iteration_list[value] = iterate
-            time_elapsed_list[value] = elapse_rt
-        update_labels()
-        
-
-
-
-    
+#     # code runs on when run button is pressed ...
+#     # for each algorithm in the queue, the corresponding stats
+#     # are projected under their respective labels
+#     def run():
+#         global coordinates_list
+#         # create_visual()
+#         s.set(launch_s.get())
+#         index_val = []
+#         for element in list(q.queue):
+#             for bll in range(len(buttons_test_list)):
+#                 if str(element) == buttons_test_list[bll]:
+#                     index_val.append(bll)
+#         print(index_val)
+#         new_cl = coordinates_list
+#         for value in range(len(index_val)):
+#             coordinates_list = new_cl
+#             components[value].invoke()
+#             comparison_list[value] = compare
+#             iteration_list[value] = iterate
+#             time_elapsed_list[value] = elapse_rt
+#         update_labels()
 
 
 def update_comparisons():
@@ -144,26 +128,33 @@ def update_iterations():
 def update_elapsed():
     elapsed.configure(text="Time Elapsed:\t" + str(round(elapse_rt, 3)) + "s")
 
+
 def start_stop():
-    
+
     # global active = False
     #global active
     if b1['text'] == 'Start Sorting':
         active = True
-        sort()
         b1.config(text="Pause Sorting")
-        # time.sleep(1)
+        sort()
+        time.sleep(1)
+    # elif b1['text'] == 'Pause Sorting':
     else:
         active = False
+        # os.system('')
+        time.sleep(1)
         b1.config(text="Start Sorting")
-        # b1.config(text="Resume")
-        # sort()
+    #     sort()
+    # else:
+    #     active = True
+    #     sort()
 
     # while running:
     #     for event in pygame.event.get():
     #         if event.type == pygame.QUIT:
     #             running = False
-    
+
+
 def sort():
     global data
     # global active
@@ -182,7 +173,7 @@ def sort():
     #     heap_sort(data, drawData, timeTick)
     # else:
     #     counting_sort(data, drawData, timeTick)
-    if active == False:  #broken should be true
+    if active == False:  # broken should be true
         if algo_menu.get() == 'Bubble Sort':
             bubble_sort(data, drawData, timeTick)
         elif algo_menu.get() == 'Selection Sort':
@@ -195,7 +186,6 @@ def sort():
             quick_sort(data, 0, len(data)-1, drawData, timeTick)
         elif algo_menu.get() == 'Heap Sort':
             heap_sort(data, drawData, timeTick)
-        
 
 
 ### User interface ###
@@ -230,28 +220,29 @@ algo_menu.current(0)
 
 
 canvas = Canvas(window, width=800, height=500, bg=WHITE)
-canvas.grid(row=3, column=0,columnspan=4, padx=10, pady=5)
+canvas.grid(row=3, column=0, columnspan=4, padx=10, pady=5)
 
 b1 = Button(UI_frame, text="Start Sorting", command=start_stop, bg=LIGHT_GRAY)
 b1.grid(row=1, column=2, padx=5, pady=5)
 
-
 b3 = Button(UI_frame, text="Generate Array", command=generate, bg=LIGHT_GRAY)
 b3.grid(row=1, column=3, padx=5, pady=5)
 
-speedScale = Scale(UI_frame, from_=0.001, to=3.0, length=200, digits=2, resolution=0.2, orient=HORIZONTAL, label="Select Speed [s]")
+speedScale = Scale(UI_frame, from_=0.01, to=4.0, length=100, digits=2,
+                   resolution=0.2, orient=HORIZONTAL, label="Select Speed [s]")
 speedScale.grid(row=0, column=4, padx=1, pady=1)
 
-sizeEntry = Scale(UI_frame, from_=3, to=100, resolution=1, orient=HORIZONTAL, label="Data Size")
+sizeEntry = Scale(UI_frame, from_=5, to=100, resolution=1,
+                  orient=HORIZONTAL, label="Data Size")
 sizeEntry.grid(row=1, column=1, padx=1, pady=1)
 
 
-
-minEntry = Scale(UI_frame, from_=0, to=10, resolution=1, orient=HORIZONTAL, label="Min Value")
+minEntry = Scale(UI_frame, from_=0, to=10, resolution=1,
+                 orient=HORIZONTAL, label="Min Value")
 minEntry.grid(row=0, column=2, padx=5, pady=5)
 
-maxEntry = Scale(UI_frame, from_=10, to=100, resolution=1, orient=HORIZONTAL, label="Max Value")
+maxEntry = Scale(UI_frame, from_=10, to=100, resolution=1,
+                 orient=HORIZONTAL, label="Max Value")
 maxEntry.grid(row=0, column=3, padx=5, pady=5)
-
 
 window.mainloop()
