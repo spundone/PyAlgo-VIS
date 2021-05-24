@@ -19,8 +19,8 @@ compare = 0
 iterate = 0
 elapse_rt = 0
 quick_time = 0
-smol_num = 10  # min number of elements in array
-large_num = 100  # max number of elements in array
+# smol_num = 10  # min number of elements in array
+# large_num = 100  # max number of elements in array
 coordinates_list = []
 active = False
 # global data
@@ -117,16 +117,16 @@ def generate():
 #         update_labels()
 
 
-def update_comparisons():
-    comparisons.configure(text="Comparisons:\t" + str(compare))
+# def update_comparisons():
+#     comparisons.configure(text="Comparisons:\t" + str(compare))
 
 
-def update_iterations():
-    iterations.configure(text="Iterations:\t" + str(iterate))
+# def update_iterations():
+#     iterations.configure(text="Iterations:\t" + str(iterate))
 
 
-def update_elapsed():
-    elapsed.configure(text="Time Elapsed:\t" + str(round(elapse_rt, 3)) + "s")
+# def update_elapsed():
+#     elapsed.configure(text="Time Elapsed:\t" + str(round(elapse_rt, 3)) + "s")
 
 
 def start_stop():
@@ -135,15 +135,15 @@ def start_stop():
     #global active
     if b1['text'] == 'Start Sorting':
         active = True
-        b1.config(text="Pause Sorting")
+        # b1.config(text="Pause Sorting")
         sort()
         time.sleep(1)
-    # elif b1['text'] == 'Pause Sorting':
-    else:
-        active = False
-        # os.system('')
-        time.sleep(1)
-        b1.config(text="Start Sorting")
+    # # elif b1['text'] == 'Pause Sorting':
+    # else:
+    #     active = False
+    #     # os.system('')
+    #     time.sleep(1)
+    #     b1.config(text="Start Sorting")
     #     sort()
     # else:
     #     active = True
