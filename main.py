@@ -228,8 +228,8 @@ b1.grid(row=1, column=2, padx=5, pady=5)
 b3 = Button(UI_frame, text="Generate Array", command=generate, bg=LIGHT_GRAY)
 b3.grid(row=1, column=3, padx=5, pady=5)
 
-speedScale = Scale(UI_frame, from_=0.01, to=4.0, length=100, digits=2,
-                   resolution=0.2, orient=HORIZONTAL, label="Select Speed [s]")
+speedScale = Scale(UI_frame, from_=0, to=10, length=100, digits=2,
+                   orient=HORIZONTAL, label="Time Delay in Sec")
 speedScale.grid(row=0, column=4, padx=1, pady=1)
 
 sizeEntry = Scale(UI_frame, from_=5, to=100, resolution=1,
